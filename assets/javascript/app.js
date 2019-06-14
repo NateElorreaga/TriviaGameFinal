@@ -137,6 +137,6 @@ function answerIsWrong(){
 function displayScore(){
     scoreContainer.style.display = "block";
     const scorePercent = Math.round ( 100 * score / questions.length);
-    scoreContainer.innerHTML = "<p>" + scorePercent + "% </p>"       
+    scoreContainer.innerHTML = "<p> Grade:"+ scorePercent + "% </p>"       
 
 }

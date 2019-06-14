@@ -131,19 +131,12 @@ body{
     position: relative;
     display: none;
 }
-#scoreContainer img{
-    position: absolute;
-    top:100px;
-    left:325px;
-}
+
 #scoreContainer p{
     position: absolute;
     display: block;
-    width : 60px;
-    height :60px;
-    top:130px;
-    left:325px;
-    font-size: 20px;
+    font-size: 50px;
     font-weight: bold;
     text-align: center;
+    padding: 110px;
 }
