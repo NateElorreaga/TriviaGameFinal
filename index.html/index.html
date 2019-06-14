@@ -9,24 +9,21 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
-  <body>
+  <body background="../assets/images/bananas.png">
     <div id="container">
-    <button id="start">Start Quiz</button>
+    <button id="start">Tid Bits</button>
+     <!-- QUESTION CODE-->
     <div id="triviaQuiz" style="display : none">
-    <div id="questionImage"><img src=""></div>
+    <img src="" id="questionImage" width=200px; height=200px;>
     <div id="question">
-        <p>Question</p>
-    <!-- ENTER QUESTION CODE HERE -->
     </div>
     
-    <!-- ENTER TIMER CODE HERE -->
+    <!-- TIMER CODE -->
     <div id="timer">
- 
         <div id="counter">10</div>
         <div id="timeBar"></div>
-        <!-- <div id="gauge"></div> -->
-
     </div>
 
     <!-- CHOICES -->
@@ -35,17 +32,16 @@
     <div class="choice" id="B" onclick="checkAnswer('B')">B</div>
     <div class="choice" id="C" onclick="checkAnswer('C')">C</div>
     </div>
+
+    <!-- PROGRESS TRACKER -->
     <div id="quizProgress">
-        <!-- <div class="progress"></div> -->
     </div>
   </div>
 </div>
     <div id="scoreContainer" style="display: none;">
-    <img src=""><p>50%</p>
+    <img src="">
     </div> 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

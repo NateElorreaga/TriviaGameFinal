@@ -12,26 +12,40 @@ const scoreContainer= document.getElementById("scoreContainer");
 
 let questions = [
     {
-        question : "What does HTML stand for?",
-        imgSrc : "../images/HTMLtest.png",
-        choiceA : "Correct",
-        choiceB : "Wrong",
-        choiceC : "Wrong",
+        question : "At any given time, there are _____ thunderstorms in progress over the earth's atmosphere?",
+        imgSrc : "../assets/images/thunderstorm.jpg",
+        choiceA : "1,800",
+        choiceB : "20,000",
+        choiceC : "500",
         correct : "A"
     },{
-        question : "What does CSS stand for?",
-        imgSrc : "../images/HTMLtest.png",
-        choiceA : "Wrong",
-        choiceB : "Correct",
-        choiceC : "Wrong",
+        question : "A sneeze travels out your mouth at over ___ mph.",
+        imgSrc : "../assets/images/Sneeze.jpeg",
+        choiceA : "250",
+        choiceB : "100",
+        choiceC : "75",
         correct : "B"
     },{
-        question : "What does JS stand for?",
-        imgSrc : "../images/HTMLtest.png",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
+        question : "Butterflies taste with their _____.",
+        imgSrc : "../assets/images/butterfly.jpg",
+        choiceA : "mouth",
+        choiceB : "wings",
+        choiceC : "feet",
         correct : "C"
+    },{
+        question : "In the United States, a pound of potato chips costs _____ times more than a pound of potatoes.",
+        imgSrc : "../assets/images/Potato-Chips.jpg",
+        choiceA : "2",
+        choiceB : "20",
+        choiceC : "200",
+        correct : "C"
+    },{
+        question : "___% of all broken photocopiers are due to people sitting on them and photocopying their butts.",
+        imgSrc : "../assets/images/photocopier.jpg",
+        choiceA : "1%",
+        choiceB : "23%",
+        choiceC: "47%",
+        correct : "B"
     }
 ];
 // create variables
@@ -39,14 +53,15 @@ let questions = [
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 let count = 0;
-const questionTime = 10; // 10s
-const gaugeWidth = 150; // 150px
+const questionTime = 10;
+const gaugeWidth = 150;
 const gaugeUnit = gaugeWidth / questionTime;
 let TIMER;
 let score = 0;
 
 // render a question
 function createQuestion(){
+    $("#questionImage").attr("src", questions[runningQuestion].imgSrc);
     let q = questions[runningQuestion]; 
 
     question.innerHTML = "<p>"+ q.question +"</p>";
@@ -86,6 +101,7 @@ function renderCounter(){
         }
         else{
             clearInterval(TIMER);
+            
             displayScore();
         }
     }
@@ -109,23 +125,18 @@ function checkAnswer(answer){
 }
 
 function answerIsCorrect(){
-    document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
+    document.getElementById(runningQuestion).style.backgroundColor = "#FFFF00";
+    $("#questionImage").attr("src", questions[runningQuestion].imgSrc);
 }
 
 function answerIsWrong(){
-    document.getElementById(runningQuestion).style.backgroundColor = "#f00";
+    document.getElementById(runningQuestion).style.backgroundColor = "#20ABB2";
+    $("#questionImage").attr("src", questions[runningQuestion].imgSrc);
 }
 
 function displayScore(){
     scoreContainer.style.display = "block";
     const scorePercent = Math.round ( 100 * score / questions.length);
-
-    let img = (scorePercent >= 80) ? "img" :
-                (scorePercent >= 60) ? "img" :
-                (scorePercent >= 40) ? "img" :
-                (scorePercent >= 20) ? "img" :
-                "img";
-    scoreContainer.innerHTML = "<img src =" + img + ">";    
-    scoreContainer.innerHTML = "<p>" + scorePercent + "%</p>"       
+    scoreContainer.innerHTML = "<p>" + scorePercent + "% </p>"       
 
 }
